@@ -1,1 +1,29 @@
 @import "../../global.scss";
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+
+  button {
+    border: none;
+    color: white;
+    cursor: pointer;
+    background-color: $col-accent;
+    padding: 0.3rem 0.5rem;
+    border-radius: 0.4rem;
+    font-weight: 600;
+    &:disabled {
+      cursor: not-allowed;
+    }
+  }
+  p {
+    font-size: 1.2rem;
+    margin: 0 2rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    span {
+      font-size: 1.3rem;
+    }
+  }
+}
