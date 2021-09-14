@@ -1,3 +1,14 @@
-$col-1: white;
-$col-2: black;
-$col-3: red;
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+$col-primary: white;
+$col-secondary: black;
+$col-accent: rgb(34, 109, 68);
+$col-bg: rgb(227, 235, 205);
+
+$font-body: "Lato", sans-serif;
+
+@mixin tab {
+  @media (min-width: 768px) {
+    @content;
+  }
+}

@@ -1,1 +1,39 @@
 @import "../../global.scss";
+
+.stories {
+  padding: 2rem;
+  display: grid;
+  @include tab {
+    padding: 0 15%;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 2rem;
+  }
+  article {
+    font-size: 1.2rem;
+    background-color: $col-bg;
+    margin: 2rem 0;
+    padding: 1.5rem 3rem;
+    border-radius: 0.8rem;
+    box-shadow: 1px 1px 3px rgb(105, 103, 103);
+
+    p {
+      font-size: 1.3rem;
+      margin: 1rem 0 2rem;
+    }
+
+    .read,
+    .remove {
+      color: $col-accent;
+      text-decoration: none;
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+
+    .remove {
+      color: rgb(136, 81, 81);
+      margin-left: 2rem;
+      border: none;
+      cursor: pointer;
+    }
+  }
+}

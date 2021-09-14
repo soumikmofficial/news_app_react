@@ -1,5 +1,5 @@
 import React, { useContext, useReducer, useEffect } from "react";
-import { SET_LOADING, SET_STORIES } from "./actions";
+import { REMOVE_STORY, SET_LOADING, SET_STORIES } from "./actions";
 import reducer from "./reducer";
 
 const API_ENDPOINT = "https://hn.algolia.com/api/v1/search?";
@@ -10,7 +10,7 @@ const AppProvider = ({ children }) => {
   const initialState = {
     loading: true,
     query: "india",
-    nbPages: null,
+    nbPages: 0,
     hits: [],
     page: 1,
   };
@@ -33,13 +33,19 @@ const AppProvider = ({ children }) => {
     }
   };
 
+  const removeStory = (id) => {
+    dispatch({ type: REMOVE_STORY, payload: id });
+  };
+
   useEffect(() => {
     const url = `${API_ENDPOINT}&query=${state.query}&page=${state.page}`;
     fetchStories(url);
   }, []);
 
   return (
-    <AppContext.Provider value={{ ...state }}>{children}</AppContext.Provider>
+    <AppContext.Provider value={{ ...state, removeStory }}>
+      {children}
+    </AppContext.Provider>
   );
 };
 
