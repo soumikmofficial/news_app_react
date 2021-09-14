@@ -12,6 +12,7 @@ function Stories() {
       </div>
     );
   }
+  return <div>stories component</div>;
 }
 
 export default Stories;
